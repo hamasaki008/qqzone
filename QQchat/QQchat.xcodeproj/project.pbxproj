@@ -12,8 +12,10 @@
 		850D137C1B047EC5009D088F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D137B1B047EC5009D088F /* ViewController.m */; };
 		850D137F1B047EC5009D088F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 850D137D1B047EC5009D088F /* Main.storyboard */; };
 		850D13811B047EC5009D088F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850D13801B047EC5009D088F /* Images.xcassets */; };
-		850D13841B047EC5009D088F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850D13821B047EC5009D088F /* LaunchScreen.xib */; };
 		850D13901B047EC5009D088F /* QQchatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D138F1B047EC5009D088F /* QQchatTests.m */; };
+		850D139B1B0616A7009D088F /* LJMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D139A1B0616A7009D088F /* LJMessage.m */; };
+		850D139E1B061EEB009D088F /* LJMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 850D139D1B061EEB009D088F /* LJMessageCell.m */; };
+		850D13A51B0624B0009D088F /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 850D13A41B0624B0009D088F /* messages.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +38,14 @@
 		850D137B1B047EC5009D088F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		850D137E1B047EC5009D088F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		850D13801B047EC5009D088F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		850D13831B047EC5009D088F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		850D13891B047EC5009D088F /* QQchatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QQchatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		850D138E1B047EC5009D088F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		850D138F1B047EC5009D088F /* QQchatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQchatTests.m; sourceTree = "<group>"; };
+		850D13991B0616A7009D088F /* LJMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJMessage.h; sourceTree = "<group>"; };
+		850D139A1B0616A7009D088F /* LJMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJMessage.m; sourceTree = "<group>"; };
+		850D139C1B061EEB009D088F /* LJMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LJMessageCell.h; path = ../LJMessageCell.h; sourceTree = "<group>"; };
+		850D139D1B061EEB009D088F /* LJMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LJMessageCell.m; path = ../LJMessageCell.m; sourceTree = "<group>"; };
+		850D13A41B0624B0009D088F /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +87,9 @@
 		850D13721B047EC5009D088F /* QQchat */ = {
 			isa = PBXGroup;
 			children = (
-				850D13771B047EC5009D088F /* AppDelegate.h */,
-				850D13781B047EC5009D088F /* AppDelegate.m */,
-				850D137A1B047EC5009D088F /* ViewController.h */,
-				850D137B1B047EC5009D088F /* ViewController.m */,
+				850D139F1B06233A009D088F /* Classes */,
 				850D137D1B047EC5009D088F /* Main.storyboard */,
 				850D13801B047EC5009D088F /* Images.xcassets */,
-				850D13821B047EC5009D088F /* LaunchScreen.xib */,
 				850D13731B047EC5009D088F /* Supporting Files */,
 			);
 			path = QQchat;
@@ -96,6 +98,7 @@
 		850D13731B047EC5009D088F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				850D13A41B0624B0009D088F /* messages.plist */,
 				850D13741B047EC5009D088F /* Info.plist */,
 				850D13751B047EC5009D088F /* main.m */,
 			);
@@ -117,6 +120,53 @@
 				850D138E1B047EC5009D088F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		850D139F1B06233A009D088F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				850D13A31B06245A009D088F /* Other */,
+				850D13A21B062359009D088F /* Conrtoller */,
+				850D13A11B06234C009D088F /* Model */,
+				850D13A01B062345009D088F /* view */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		850D13A01B062345009D088F /* view */ = {
+			isa = PBXGroup;
+			children = (
+				850D139C1B061EEB009D088F /* LJMessageCell.h */,
+				850D139D1B061EEB009D088F /* LJMessageCell.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		850D13A11B06234C009D088F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				850D13991B0616A7009D088F /* LJMessage.h */,
+				850D139A1B0616A7009D088F /* LJMessage.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		850D13A21B062359009D088F /* Conrtoller */ = {
+			isa = PBXGroup;
+			children = (
+				850D137A1B047EC5009D088F /* ViewController.h */,
+				850D137B1B047EC5009D088F /* ViewController.m */,
+			);
+			name = Conrtoller;
+			sourceTree = "<group>";
+		};
+		850D13A31B06245A009D088F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				850D13771B047EC5009D088F /* AppDelegate.h */,
+				850D13781B047EC5009D088F /* AppDelegate.m */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850D13A51B0624B0009D088F /* messages.plist in Resources */,
 				850D137F1B047EC5009D088F /* Main.storyboard in Resources */,
-				850D13841B047EC5009D088F /* LaunchScreen.xib in Resources */,
 				850D13811B047EC5009D088F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,7 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				850D137C1B047EC5009D088F /* ViewController.m in Sources */,
+				850D139B1B0616A7009D088F /* LJMessage.m in Sources */,
 				850D13791B047EC5009D088F /* AppDelegate.m in Sources */,
+				850D139E1B061EEB009D088F /* LJMessageCell.m in Sources */,
 				850D13761B047EC5009D088F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,14 +302,6 @@
 				850D137E1B047EC5009D088F /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		850D13821B047EC5009D088F /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				850D13831B047EC5009D088F /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -347,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = QQchat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,6 +402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = QQchat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +462,7 @@
 				850D13951B047EC5009D088F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		850D13961B047EC5009D088F /* Build configuration list for PBXNativeTarget "QQchatTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +471,7 @@
 				850D13981B047EC5009D088F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
